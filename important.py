@@ -1,3 +1,47 @@
+import subprocess
+
+# Install streamlit and login to Hugging Face Hub
+subprocess.run(["pip", "install", "streamlit"])
+subprocess.run(["pip", "install", "huggingface-hub"])
+from huggingface_hub import notebook_login
+notebook_login()
+
+# Install required libraries
+libraries_to_install = [
+    "transformers",
+    "datasets",
+    "trl",
+    "peft",
+    "accelerate",
+    "bitsandbytes",
+    "auto-gptq",
+    "optimum",
+    "playwright",
+    "langchain",
+    "html2text",
+    "sentence_transformers",
+    "faiss-gpu",
+    "pyttsx3",
+    "SpeechRecognition",
+]
+
+for lib in libraries_to_install:
+    subprocess.run(["pip", "install", "-qU", lib])
+
+# Install Playwright dependencies
+subprocess.run(["playwright", "install"])
+subprocess.run(["playwright", "install-deps"])
+
+
+
+
+
+
+
+
+
+
+
 import streamlit as st
 #import whisper
 import pyttsx3
