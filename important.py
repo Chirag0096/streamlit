@@ -4,7 +4,11 @@ import subprocess
 subprocess.run(["pip", "install", "streamlit"])
 subprocess.run(["pip", "install", "huggingface-hub"])
 from huggingface_hub import notebook_login
-notebook_login()
+
+# Paste your API key here
+api_key = "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"
+
+notebook_login(api_key=api_key)
 
 # Install required libraries
 libraries_to_install = [
