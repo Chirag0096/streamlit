@@ -30,8 +30,8 @@ for lib in libraries_to_install:
     subprocess.run(["pip", "install", "-qU", lib])
 
 # Install Playwright dependencies
-subprocess.run(["playwright", "install"])
-subprocess.run(["playwright", "install-deps"])
+subprocess.run(["pip","playwright", "install"])
+subprocess.run(["pip","playwright", "install-deps"])
 
 
 
