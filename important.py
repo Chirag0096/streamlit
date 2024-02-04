@@ -36,12 +36,22 @@ subprocess.run(["playwright", "install-deps"])
 
 
 
+import os
 from huggingface_hub import notebook_login
 
 # Paste your API key here
-api_key = "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"
+api_key = "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"
 
-notebook_login(api_key=api_key)
+# Set the Hugging Face Hub API key as an environment variable
+os.environ["HF_HOME"] = os.path.expanduser("~/.huggingface")
+os.environ["HF_HOME_WRITE"] = os.environ["HF_HOME"]
+os.environ["HF_HOME_READ"] = os.environ["HF_HOME"]
+os.environ["HF_HOME_TRANSFORMERS"] = os.path.join(os.environ["HF_HOME"], "transformers")
+os.environ["HF_HOME_DATASETS"] = os.path.join(os.environ["HF_HOME"], "datasets")
+os.environ["HUGGINGFACE_TOKEN"] = api_key
+
+# Login to the Hugging Face Hub
+notebook_login()
 
 
 
